@@ -22,7 +22,7 @@
     <properties>
         <!-- Build properties -->
         <maven.version>3.3.9</maven.version>
-        <java.version>1.8</java.version>
+        <java.version>1.13</java.version>
         <node.version>v12.16.1</node.version>
         <npm.version>6.14.5</npm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,6 +103,19 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.jhipster</groupId>
             <artifactId>jhipster-framework</artifactId>
@@ -376,6 +389,22 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>12</source>
+                    <target>12</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>13</source>
+                    <target>13</target>
+                </configuration>
             </plugin>
             <!-- jhipster-needle-maven-add-plugin -->
         </plugins>

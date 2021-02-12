@@ -50,6 +50,19 @@ public class CacheConfiguration {
             createCache(cm, org.miholc.spelling.domain.User.class.getName() + ".authorities");
             createCache(cm, org.miholc.spelling.domain.PersistentToken.class.getName());
             createCache(cm, org.miholc.spelling.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, org.miholc.spelling.domain.Phoneme.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Grapheme.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Word.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Pgc.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Pgcl.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Pgclo.class.getName());
+            createCache(cm, org.miholc.spelling.domain.Rule.class.getName());
+            createCache(cm, org.miholc.spelling.domain.RuleExample.class.getName());
+            createCache(cm, org.miholc.spelling.domain.RuleException.class.getName());
+            createCache(cm, org.miholc.spelling.domain.WordList.class.getName());
+            createCache(cm, org.miholc.spelling.domain.WordInList.class.getName());
+            createCache(cm, org.miholc.spelling.domain.HomophonePair.class.getName());
+            createCache(cm, org.miholc.spelling.domain.NationalEducationalLevel.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

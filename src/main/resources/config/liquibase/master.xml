@@ -14,7 +14,31 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162241_added_entity_Phoneme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162341_added_entity_Grapheme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162441_added_entity_Word.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162541_added_entity_Pgc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162641_added_entity_Pgcl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162741_added_entity_Pgclo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162841_added_entity_Rule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162941_added_entity_RuleExample.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163041_added_entity_RuleException.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163141_added_entity_WordList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163241_added_entity_WordInList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163341_added_entity_HomophonePair.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163441_added_entity_NationalEducationalLevel.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200530162241_added_entity_constraints_Phoneme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162341_added_entity_constraints_Grapheme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162441_added_entity_constraints_Word.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162541_added_entity_constraints_Pgc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162641_added_entity_constraints_Pgcl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162741_added_entity_constraints_Pgclo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162841_added_entity_constraints_Rule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530162941_added_entity_constraints_RuleExample.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163041_added_entity_constraints_RuleException.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163241_added_entity_constraints_WordInList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200530163341_added_entity_constraints_HomophonePair.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>
