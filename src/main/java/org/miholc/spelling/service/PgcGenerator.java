@@ -529,10 +529,10 @@ public class PgcGenerator {
 //            gen.generatePgcsFromIpaStringAndWord(gen.cleanRegex("mətɪəriəl"), "material", unmatchedWriter, matchedWriter);
 //            gen.generatePgcsFromIpaStringAndWord("reɡjələ", "regular", unmatchedWriter, matchedWriter);
 //            gen.generatePgcsFromIpaStringAndWord("reɪn", "reign", unmatchedWriter, matchedWriter);
-            gen.generatePgcsFromIpaStringAndWord("/fjuːd/", "feud", unmatchedWriter, matchedWriter);
-            gen.generatePgcsFromIpaStringAndWord("/djuːs/", "deuce", unmatchedWriter, matchedWriter);
-            gen.generatePgcsFromIpaStringAndWord("/dʒuːs/", "deuce", unmatchedWriter, matchedWriter);
-            gen.generatePgcsFromIpaStringAndWord("/dʒuːs/", "juice", unmatchedWriter, matchedWriter);
+//            gen.generatePgcsFromIpaStringAndWord("/fjuːd/", "feud", unmatchedWriter, matchedWriter);
+//            gen.generatePgcsFromIpaStringAndWord("/djuːs/", "deuce", unmatchedWriter, matchedWriter);
+//            gen.generatePgcsFromIpaStringAndWord("/dʒuːs/", "deuce", unmatchedWriter, matchedWriter);
+//            gen.generatePgcsFromIpaStringAndWord("/dʒuːs/", "juice", unmatchedWriter, matchedWriter);
 
 //            PageFetcher fetcher = new PageFetcher();
 //        fetcher.fetchWordDetail("England");
