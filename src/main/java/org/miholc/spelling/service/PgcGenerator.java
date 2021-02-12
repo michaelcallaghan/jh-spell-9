@@ -393,7 +393,7 @@ public class PgcGenerator {
             IPA_PARSER_REGEX = "ən|" + IPA_PARSER_REGEX;
 //            pgcMap.put("ən", "(n)"); // for didn't etc.  ?????
         }
-//        System.out.println("Word after apos removal: " + word);
+        System.out.println("Word after apos removal: " + word);
         List<String> phonemes = new ArrayList<>();
         Pattern pattern = Pattern.compile(IPA_PARSER_REGEX);
         Matcher m = pattern.matcher(ipaString);
