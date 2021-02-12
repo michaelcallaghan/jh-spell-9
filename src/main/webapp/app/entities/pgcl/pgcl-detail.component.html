@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgcl">
+            <h2><span>Pgcl</span> {{ pgcl.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Text</span></dt>
+                <dd>
+                    <span>{{ pgcl.text }}</span>
+                </dd>
+                <dt><span>Location</span></dt>
+                <dd>
+                    <span>{{ pgcl.location }}</span>
+                </dd>
+                <dt><span>Syllabic Context</span></dt>
+                <dd>
+                    <span>{{ pgcl.syllabicContext }}</span>
+                </dd>
+                <dt><span>Frequency</span></dt>
+                <dd>
+                    <span>{{ pgcl.frequency }}</span>
+                </dd>
+                <dt><span>Pgc</span></dt>
+                <dd>
+                    <div *ngIf="pgcl.pgc">
+                        <a [routerLink]="['/pgc', pgcl.pgc?.id, 'view']">{{ pgcl.pgc?.text }}</a>
+                    </div>
+                </dd>
+                <dt><span>First Introduced At</span></dt>
+                <dd>
+                    <div *ngIf="pgcl.firstIntroducedAt">
+                        <a [routerLink]="['/national-educational-level', pgcl.firstIntroducedAt?.id, 'view']">{{ pgcl.firstIntroducedAt?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pgcl', pgcl.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

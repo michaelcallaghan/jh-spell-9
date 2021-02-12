@@ -1,0 +1,3 @@
+rəʊɡ : rogue
+((rr|rh|wr|r)(ough|ow|oa|oh$|o)((?<=[aeiou]{2})gue$|(?<=[aeiou]{2})gue(?=s)|gg|gu|gh|g))(e)?
+r->r əʊ->o ɡ->gu (split e)

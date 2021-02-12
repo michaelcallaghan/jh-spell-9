@@ -1,0 +1,44 @@
+{
+  "name": "Phoneme",
+  "fields": [
+    {
+      "fieldName": "ipa",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "aka",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "informalUkGov",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "wikiIpa",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "phoneme",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162241",
+  "entityTableName": "phoneme",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

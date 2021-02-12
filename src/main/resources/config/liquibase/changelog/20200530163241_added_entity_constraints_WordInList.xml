@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity WordInList.
+    -->
+    <changeSet id="20200530163241-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="word_id"
+                                 baseTableName="word_in_list"
+                                 constraintName="fk_word_in_list_word_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="word"/>
+
+        <addForeignKeyConstraint baseColumnNames="word_list_id"
+                                 baseTableName="word_in_list"
+                                 constraintName="fk_word_in_list_word_list_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="word_list"/>
+
+    </changeSet>
+</databaseChangeLog>

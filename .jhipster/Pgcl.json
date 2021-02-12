@@ -1,0 +1,51 @@
+{
+  "name": "Pgcl",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "Location",
+      "fieldValues": "ANYWHERE,INITIAL,MEDIAL,PRE_FINAL,STEM_FINAL,WORD_FINAL"
+    },
+    {
+      "fieldName": "syllabicContext",
+      "fieldType": "SyllabicContext",
+      "fieldValues": "MONO,FINAL,NON_FINAL,PENULTIMATE,ANTE_PENULTIMATE,ANTE_ANTE_PENULTIMATE"
+    },
+    {
+      "fieldName": "frequency",
+      "fieldType": "Frequency",
+      "fieldValues": "REGULAR,VERY_COMMON,COMMON,LESS_COMMON,UNCOMMON,RARE,UNIQUE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pgc",
+      "otherEntityRelationshipName": "pgcl",
+      "relationshipName": "pgc",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "pgcl",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162641",
+  "entityTableName": "pgcl",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="homophonePair">
+            <h2><span>Homophone Pair</span> {{ homophonePair.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Text</span></dt>
+                <dd>
+                    <span>{{ homophonePair.text }}</span>
+                </dd>
+                <dt><span>Word</span></dt>
+                <dd>
+                    <div *ngIf="homophonePair.word">
+                        <a [routerLink]="['/word', homophonePair.word?.id, 'view']">{{ homophonePair.word?.text }}</a>
+                    </div>
+                </dd>
+                <dt><span>Homophone</span></dt>
+                <dd>
+                    <div *ngIf="homophonePair.homophone">
+                        <a [routerLink]="['/word', homophonePair.homophone?.id, 'view']">{{ homophonePair.homophone?.text }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/homophone-pair', homophonePair.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "name": "Rule",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "rule",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162841",
+  "entityTableName": "rule",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

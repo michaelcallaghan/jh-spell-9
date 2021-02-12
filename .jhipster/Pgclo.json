@@ -1,0 +1,51 @@
+{
+  "name": "Pgclo",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pgcl",
+      "otherEntityRelationshipName": "pgclo",
+      "relationshipName": "pgcl",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "word",
+      "otherEntityRelationshipName": "pgclo",
+      "relationshipName": "word",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "pgclo",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162741",
+  "entityTableName": "pgclo",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

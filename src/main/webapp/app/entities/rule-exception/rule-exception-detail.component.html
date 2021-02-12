@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ruleException">
+            <h2><span>Rule Exception</span> {{ ruleException.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Info</span></dt>
+                <dd>
+                    <span>{{ ruleException.info }}</span>
+                </dd>
+                <dt><span>Rule</span></dt>
+                <dd>
+                    <div *ngIf="ruleException.rule">
+                        <a [routerLink]="['/rule', ruleException.rule?.id, 'view']">{{ ruleException.rule?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span>Pgclo</span></dt>
+                <dd>
+                    <div *ngIf="ruleException.pgclo">
+                        <a [routerLink]="['/pgclo', ruleException.pgclo?.id, 'view']">{{ ruleException.pgclo?.text }}</a>
+                    </div>
+                </dd>
+                <dt><span>First Introduced At</span></dt>
+                <dd>
+                    <div *ngIf="ruleException.firstIntroducedAt">
+                        <a [routerLink]="['/national-educational-level', ruleException.firstIntroducedAt?.id, 'view']">{{ ruleException.firstIntroducedAt?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rule-exception', ruleException.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

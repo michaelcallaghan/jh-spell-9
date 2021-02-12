@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Pgcl.
+    -->
+    <changeSet id="20200530162641-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pgc_id"
+                                 baseTableName="pgcl"
+                                 constraintName="fk_pgcl_pgc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pgc"/>
+
+        <addForeignKeyConstraint baseColumnNames="first_introduced_at_id"
+                                 baseTableName="pgcl"
+                                 constraintName="fk_pgcl_first_introduced_at_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="national_educational_level"/>
+
+    </changeSet>
+</databaseChangeLog>

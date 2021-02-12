@@ -1,0 +1,56 @@
+{
+  "name": "Word",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "ipaText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soundFile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "usageSoundFile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "altIpaText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "altSoundFile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "altUsageSoundFile",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "word",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162441",
+  "entityTableName": "word",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgclo">
+            <h2><span>Pgclo</span> {{ pgclo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Text</span></dt>
+                <dd>
+                    <span>{{ pgclo.text }}</span>
+                </dd>
+                <dt><span>Start</span></dt>
+                <dd>
+                    <span>{{ pgclo.start }}</span>
+                </dd>
+                <dt><span>End</span></dt>
+                <dd>
+                    <span>{{ pgclo.end }}</span>
+                </dd>
+                <dt><span>Pgcl</span></dt>
+                <dd>
+                    <div *ngIf="pgclo.pgcl">
+                        <a [routerLink]="['/pgcl', pgclo.pgcl?.id, 'view']">{{ pgclo.pgcl?.text }}</a>
+                    </div>
+                </dd>
+                <dt><span>Word</span></dt>
+                <dd>
+                    <div *ngIf="pgclo.word">
+                        <a [routerLink]="['/word', pgclo.word?.id, 'view']">{{ pgclo.word?.text }}</a>
+                    </div>
+                </dd>
+                <dt><span>First Introduced At</span></dt>
+                <dd>
+                    <div *ngIf="pgclo.firstIntroducedAt">
+                        <a [routerLink]="['/national-educational-level', pgclo.firstIntroducedAt?.id, 'view']">{{ pgclo.firstIntroducedAt?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pgclo', pgclo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

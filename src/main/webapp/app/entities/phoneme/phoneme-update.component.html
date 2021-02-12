@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-phoneme-heading">Create or edit a Phoneme</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ipa">Ipa</label>
+                    <input type="text" class="form-control" name="ipa" id="field_ipa"
+                           formControlName="ipa"/>
+                    <div *ngIf="editForm.get('ipa')!.invalid && (editForm.get('ipa')!.dirty || editForm.get('ipa')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ipa')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aka">Aka</label>
+                    <input type="text" class="form-control" name="aka" id="field_aka"
+                           formControlName="aka"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_informalUkGov">Informal Uk Gov</label>
+                    <input type="text" class="form-control" name="informalUkGov" id="field_informalUkGov"
+                           formControlName="informalUkGov"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wikiIpa">Wiki Ipa</label>
+                    <input type="text" class="form-control" name="wikiIpa" id="field_wikiIpa"
+                           formControlName="wikiIpa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstIntroducedAt">First Introduced At</label>
+                    <select class="form-control" id="field_firstIntroducedAt" name="firstIntroducedAt" formControlName="firstIntroducedAt">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nationalEducationalLevelOption.id === editForm.get('firstIntroducedAt')!.value?.id ? editForm.get('firstIntroducedAt')!.value : nationalEducationalLevelOption" *ngFor="let nationalEducationalLevelOption of nationaleducationallevels; trackBy: trackById">{{ nationalEducationalLevelOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

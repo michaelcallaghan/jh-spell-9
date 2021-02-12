@@ -1,0 +1,36 @@
+{
+  "name": "HomophonePair",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "word",
+      "otherEntityRelationshipName": "homophonePair",
+      "relationshipName": "word",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "word",
+      "otherEntityRelationshipName": "homophonePair",
+      "relationshipName": "homophone",
+      "otherEntityField": "text"
+    }
+  ],
+  "changelogDate": "20200530163341",
+  "entityTableName": "homophone_pair",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

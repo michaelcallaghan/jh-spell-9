@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pgcl-heading">Create or edit a Pgcl</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_text">Text</label>
+                    <input type="text" class="form-control" name="text" id="field_text"
+                           formControlName="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_location">Location</label>
+                    <select class="form-control" name="location" formControlName="location" id="field_location">
+                        <option value="ANYWHERE">ANYWHERE</option>
+                        <option value="INITIAL">INITIAL</option>
+                        <option value="MEDIAL">MEDIAL</option>
+                        <option value="PRE_FINAL">PRE_FINAL</option>
+                        <option value="STEM_FINAL">STEM_FINAL</option>
+                        <option value="WORD_FINAL">WORD_FINAL</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syllabicContext">Syllabic Context</label>
+                    <select class="form-control" name="syllabicContext" formControlName="syllabicContext" id="field_syllabicContext">
+                        <option value="MONO">MONO</option>
+                        <option value="FINAL">FINAL</option>
+                        <option value="NON_FINAL">NON_FINAL</option>
+                        <option value="PENULTIMATE">PENULTIMATE</option>
+                        <option value="ANTE_PENULTIMATE">ANTE_PENULTIMATE</option>
+                        <option value="ANTE_ANTE_PENULTIMATE">ANTE_ANTE_PENULTIMATE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_frequency">Frequency</label>
+                    <select class="form-control" name="frequency" formControlName="frequency" id="field_frequency">
+                        <option value="REGULAR">REGULAR</option>
+                        <option value="VERY_COMMON">VERY_COMMON</option>
+                        <option value="COMMON">COMMON</option>
+                        <option value="LESS_COMMON">LESS_COMMON</option>
+                        <option value="UNCOMMON">UNCOMMON</option>
+                        <option value="RARE">RARE</option>
+                        <option value="UNIQUE">UNIQUE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pgc">Pgc</label>
+                    <select class="form-control" id="field_pgc" name="pgc" formControlName="pgc">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pgcOption.id === editForm.get('pgc')!.value?.id ? editForm.get('pgc')!.value : pgcOption" *ngFor="let pgcOption of pgcs; trackBy: trackById">{{ pgcOption.text }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstIntroducedAt">First Introduced At</label>
+                    <select class="form-control" id="field_firstIntroducedAt" name="firstIntroducedAt" formControlName="firstIntroducedAt">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nationalEducationalLevelOption.id === editForm.get('firstIntroducedAt')!.value?.id ? editForm.get('firstIntroducedAt')!.value : nationalEducationalLevelOption" *ngFor="let nationalEducationalLevelOption of nationaleducationallevels; trackBy: trackById">{{ nationalEducationalLevelOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

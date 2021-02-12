@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-rule-exception-heading">Create or edit a Rule Exception</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_info">Info</label>
+                    <input type="text" class="form-control" name="info" id="field_info"
+                           formControlName="info"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rule">Rule</label>
+                    <select class="form-control" id="field_rule" name="rule" formControlName="rule">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ruleOption.id === editForm.get('rule')!.value?.id ? editForm.get('rule')!.value : ruleOption" *ngFor="let ruleOption of rules; trackBy: trackById">{{ ruleOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pgclo">Pgclo</label>
+                    <select class="form-control" id="field_pgclo" name="pgclo" formControlName="pgclo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pgcloOption.id === editForm.get('pgclo')!.value?.id ? editForm.get('pgclo')!.value : pgcloOption" *ngFor="let pgcloOption of pgclos; trackBy: trackById">{{ pgcloOption.text }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstIntroducedAt">First Introduced At</label>
+                    <select class="form-control" id="field_firstIntroducedAt" name="firstIntroducedAt" formControlName="firstIntroducedAt">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nationalEducationalLevelOption.id === editForm.get('firstIntroducedAt')!.value?.id ? editForm.get('firstIntroducedAt')!.value : nationalEducationalLevelOption" *ngFor="let nationalEducationalLevelOption of nationaleducationallevels; trackBy: trackById">{{ nationalEducationalLevelOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-homophone-pair-heading">Create or edit a Homophone Pair</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_text">Text</label>
+                    <input type="text" class="form-control" name="text" id="field_text"
+                           formControlName="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_word">Word</label>
+                    <select class="form-control" id="field_word" name="word" formControlName="word">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="wordOption.id === editForm.get('word')!.value?.id ? editForm.get('word')!.value : wordOption" *ngFor="let wordOption of words; trackBy: trackById">{{ wordOption.text }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_homophone">Homophone</label>
+                    <select class="form-control" id="field_homophone" name="homophone" formControlName="homophone">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="wordOption.id === editForm.get('homophone')!.value?.id ? editForm.get('homophone')!.value : wordOption" *ngFor="let wordOption of words; trackBy: trackById">{{ wordOption.text }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

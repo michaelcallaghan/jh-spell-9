@@ -1,0 +1,48 @@
+{
+  "name": "Pgc",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "frequency",
+      "fieldType": "Frequency",
+      "fieldValues": "REGULAR,VERY_COMMON,COMMON,LESS_COMMON,UNCOMMON,RARE,UNIQUE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "phoneme",
+      "otherEntityRelationshipName": "pgc",
+      "relationshipName": "phoneme",
+      "otherEntityField": "ipa"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "grapheme",
+      "otherEntityRelationshipName": "pgc",
+      "relationshipName": "grapheme",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nationalEducationalLevel",
+      "otherEntityRelationshipName": "pgc",
+      "relationshipName": "firstIntroducedAt",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530162541",
+  "entityTableName": "pgc",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

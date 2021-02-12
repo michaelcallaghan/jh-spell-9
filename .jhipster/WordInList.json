@@ -1,0 +1,36 @@
+{
+  "name": "WordInList",
+  "fields": [
+    {
+      "fieldName": "position",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "word",
+      "otherEntityRelationshipName": "wordInList",
+      "relationshipName": "word",
+      "otherEntityField": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "wordList",
+      "otherEntityRelationshipName": "wordInList",
+      "relationshipName": "wordList",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200530163241",
+  "entityTableName": "word_in_list",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
